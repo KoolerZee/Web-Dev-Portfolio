@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jon Maurice Sernande - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">
+            <h2>JM|<span class="highlight">RS</span></h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section bg-texture-1">
+        <div class="container home-container">
+            <div class="home-text">
+                <h1>Hi<br>I'm<br><span class="highlight">Jon Maurice Sernande</span><br>a Front End Developer</h1>
+                <div class="divider"></div>
+                <p>Welcome to my <span class="highlight">portfolio</span>. Here, I explore the balance between minimalist design and rich textures, ensuring that deep functionality always leads the way.</p>
+            </div>
+            <div class="home-image">
+                <!-- Replace src with your actual image path -->
+                <img src="resources/home.jpg" alt="Jon Maurice" class="profile-circle">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-texture-2">
+        <div class="about-band">
+            <div class="container about-container">
+                <div class="about-image">
+                    <!-- Replace src with your actual image path -->
+                    <img src="resources/about.jpg" alt="Jon Maurice at Chalkboard" class="profile-circle">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title text-right">About <span class="highlight">Me</span></h2>
+                    <p>I'm <span class="highlight">Jon Maurice R. Sernande</span>, a 2nd-year <span class="highlight">BSIT</span> student at Opol Community College.</p>
+                    <p>My lifelong fascination with technology is what led me to IT, and today, I've channeled that passion into UI, <span class="highlight">Web Design</span>, and <span class="highlight">Game Development</span>.</p>
+                    <p>I'm <span class="highlight">eager</span> to take on new challenges, meeting user demands through creative, functional design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio & Skills Section -->
+    <section id="portfolio" class="section bg-texture-1">
+        <div class="container box-container">
+            <div class="box-section">
+                <h2>Portfolio</h2>
+                <ul class="custom-list">
+                    <li><strong>Exercise Tracker</strong> - <span class="highlight">Back End Developer and Debugger</span></li>
+                    <li><strong>Quiz Game "Project Labyrinth"</strong> - <span class="highlight">Front End Developer and Debugger</span></li>
+                </ul>
+            </div>
+            <div class="box-divider"></div>
+            <div class="box-section">
+                <h2>Skills</h2>
+                <ul class="custom-list">
+                    <li><strong>Proficient in <span class="highlight">Java, Python, HTML, and CSS</span></strong></li>
+                    <li><strong>Experienced in <span class="highlight">Game Development and Game Design</span></strong></li>
+                    <li><strong>Knowledgeable in <span class="highlight">UI and Web Design</span></strong></li>
+                    <li><strong>Possesses <span class="highlight">Fundamental IT Skills</span></strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-texture-3">
+        <div class="contact-band">
+            <div class="container contact-container">
+                <div class="contact-info">
+                    <h2>Contact Me on:</h2>
+                    <ul class="contact-list">
+                        <li><i class="fa-regular fa-envelope"></i> <span class="highlight">sernandejonmaurice@gmail.com</span></li>
+                        <li><i class="fa-brands fa-square-facebook"></i> <span class="highlight">Jon Maurice Sernande</span></li>
+                        <li><i class="fa-brands fa-instagram"></i> <span class="highlight">jonmau_rs</span></li>
+                        <li><i class="fa-solid fa-phone"></i> <span class="highlight">0936-671-0650</span></li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <h2>Send Feedback Here:</h2>
+                    <form id="feedbackForm">
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message Here:</label>
+                            <textarea id="message" name="message" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
