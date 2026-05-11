@@ -1,116 +1,129 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jon Maurice Sernande - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Navigation -->
     <header>
-        <div class="logo">
-            <h2>JM|<span class="highlight">RS</span></h2>
+        <div class="container header-inner">
+            <div class="logo">
+                <h2>JM<span class="logo-divider">|</span><span class="highlight">RS</span></h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
-
-    <!-- Home Section -->
-    <section id="home" class="section bg-texture-1">
-        <div class="container home-container">
-            <div class="home-text">
-                <h1>Hi<br>I'm<br><span class="highlight">Jon Maurice Sernande</span><br>a Front End Developer</h1>
-                <div class="divider"></div>
-                <p>Welcome to my <span class="highlight">portfolio</span>. Here, I explore the balance between minimalist design and rich textures, ensuring that deep functionality always leads the way.</p>
-            </div>
-            <div class="home-image">
-                <!-- Replace src with your actual image path -->
-                <img src="resources/home.jpg" alt="Jon Maurice" class="profile-circle">
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section bg-texture-2">
-        <div class="about-band">
-            <div class="container about-container">
-                <div class="about-image">
-                    <!-- Replace src with your actual image path -->
-                    <img src="resources/about.jpg" alt="Jon Maurice at Chalkboard" class="profile-circle">
+    <main>
+        <section id="home" class="section hero-section">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Hello, I'm</p>
+                    <h1>Jon Maurice<br><span class="highlight">Sernande</span></h1>
+                    <p class="hero-description">Welcome to my portfolio. Here, I explore the balance between minimalist design and rich textures, ensuring that deep functionality always leads the way.</p>
+                    <a href="#projects" class="cta-btn">View Projects</a>
                 </div>
-                <div class="about-text">
-                    <h2 class="section-title text-right">About <span class="highlight">Me</span></h2>
+                <div class="hero-visual">
+                    <div class="hero-photo"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="container about-grid">
+                <div class="about-visual">
+                    <div class="about-photo"></div>
+                </div>
+                <div class="about-copy">
+                    <h2>About <span class="highlight">Me</span></h2>
                     <p>I'm <span class="highlight">Jon Maurice R. Sernande</span>, a 2nd-year <span class="highlight">BSIT</span> student at Opol Community College.</p>
-                    <p>My lifelong fascination with technology is what led me to IT, and today, I've channeled that passion into UI, <span class="highlight">Web Design</span>, and <span class="highlight">Game Development</span>.</p>
-                    <p>I'm <span class="highlight">eager</span> to take on new challenges, meeting user demands through creative, functional design.</p>
+                    <p>My lifelong fascination with technology led me to IT, and I now channel that passion into UI, <span class="highlight">Web Design</span>, and <span class="highlight">Game Development</span>.</p>
+                    <p>I'm <span class="highlight">eager</span> to take on new challenges and deliver creative, functional experiences that users enjoy.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Portfolio & Skills Section -->
-    <section id="portfolio" class="section bg-texture-1">
-        <div class="container box-container">
-            <div class="box-section">
-                <h2>Portfolio</h2>
-                <ul class="custom-list">
-                    <li><strong>Exercise Tracker</strong> - <span class="highlight">Back End Developer and Debugger</span></li>
-                    <li><strong>Quiz Game "Project Labyrinth"</strong> - <span class="highlight">Front End Developer and Debugger</span></li>
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Projects</h2>
+                    <p>Two featured projects showing my backend and frontend work with clean presentation.</p>
+                </div>
+
+                <div class="project-panel">
+                    <div class="project-heading">
+                        <h3>Project #1</h3>
+                        <p class="project-role">Simple Exercise Planner — <span>Back End Developer</span></p>
+                    </div>
+                    <div class="project-display">
+                        <div class="project-frame">
+                            <img src="resources/exercise_planner1.png" alt="Exercise Planner preview">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-panel gallery-panel">
+                    <div class="project-heading">
+                        <h3>Project #2</h3>
+                        <p class="project-role">Quiz Game “Project Labyrinth” — <span>Front End Developer</span></p>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img src="resources/quiz_game1.png" alt="Project Labyrinth screen 1"><p>Menu view</p></div>
+                        <div class="gallery-card"><img src="resources/quiz_game2.png" alt="Project Labyrinth screen 2"><p>Question play</p></div>
+                        <div class="gallery-card"><img src="resources/quiz_game3.png" alt="Project Labyrinth screen 3"><p>Leaderboard</p></div>
+                        <div class="gallery-card"><img src="resources/quiz_game4.png" alt="Project Labyrinth screen 4"><p>Credits screen</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills-section">
+            <div class="container skills-panel">
+                <div class="section-heading">
+                    <h2>Skills</h2>
+                </div>
+                <ul class="skills-list">
+                    <li>Proficient in <span class="highlight">Java, Python, HTML, and CSS</span></li>
+                    <li>Experienced in <span class="highlight">Game Development and Game Design</span></li>
+                    <li>Knowledgeable in <span class="highlight">UI and Web Design</span></li>
                 </ul>
             </div>
-            <div class="box-divider"></div>
-            <div class="box-section">
-                <h2>Skills</h2>
-                <ul class="custom-list">
-                    <li><strong>Proficient in <span class="highlight">Java, Python, HTML, and CSS</span></strong></li>
-                    <li><strong>Experienced in <span class="highlight">Game Development and Game Design</span></strong></li>
-                    <li><strong>Knowledgeable in <span class="highlight">UI and Web Design</span></strong></li>
-                    <li><strong>Possesses <span class="highlight">Fundamental IT Skills</span></strong></li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section bg-texture-3">
-        <div class="contact-band">
-            <div class="container contact-container">
-                <div class="contact-info">
+        <section id="contact" class="section contact-section">
+            <div class="container contact-grid">
+                <div class="contact-card contact-details">
                     <h2>Contact Me on:</h2>
                     <ul class="contact-list">
-                        <li><i class="fa-regular fa-envelope"></i> <span class="highlight">sernandejonmaurice@gmail.com</span></li>
-                        <li><i class="fa-brands fa-square-facebook"></i> <span class="highlight">Jon Maurice Sernande</span></li>
-                        <li><i class="fa-brands fa-instagram"></i> <span class="highlight">jonmau_rs</span></li>
-                        <li><i class="fa-solid fa-phone"></i> <span class="highlight">0936-671-0650</span></li>
+                        <li><i class="fa-regular fa-envelope"></i><span>sernandejonmaurice@gmail.com</span></li>
+                        <li><i class="fa-brands fa-square-facebook"></i><span>Jon Maurice Sernande</span></li>
+                        <li><i class="fa-brands fa-instagram"></i><span>jonmau_rs</span></li>
+                        <li><i class="fa-solid fa-phone"></i><span>0936-671-0650</span></li>
                     </ul>
                 </div>
-                <div class="contact-form">
+                <div class="contact-card contact-form-card">
                     <h2>Send Feedback Here:</h2>
                     <form id="feedbackForm">
-                        <div class="form-group">
-                            <label for="subject">Subject:</label>
-                            <input type="text" id="subject" name="subject">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message Here:</label>
-                            <textarea id="message" name="message" rows="5"></textarea>
-                        </div>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What would you like to share?">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
                         <button type="submit" class="submit-btn">Submit</button>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
