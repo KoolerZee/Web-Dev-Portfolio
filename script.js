@@ -42,7 +42,7 @@
                 entry.target.style.visibility = 'visible';
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
     // Observe all animated elements
     document.querySelectorAll('[class*="animate-"]').forEach(el => {
