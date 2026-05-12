@@ -24,6 +24,79 @@ body {
     min-height: 100vh;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(139,69,69,0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(139,69,69,0.6);
+    }
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -76,17 +149,20 @@ nav ul li a {
     color: var(--primary-color);
     font-weight: bold;
     font-size: 0.95rem;
-    transition: color 0.25s ease;
+    transition: color 0.25s ease, transform 0.25s ease;
+    position: relative;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
     color: var(--highlight-color);
+    transform: scale(1.05);
 }
 
 nav ul li a.active {
     color: var(--highlight-color);
     border-bottom: 2px solid var(--highlight-color);
+    animation: scaleIn 0.4s ease;
 }
 
 .section {
@@ -117,12 +193,14 @@ nav ul li a.active {
     letter-spacing: 1px;
     margin-bottom: 16px;
     color: #4d4d4d;
+    animation: fadeInUp 0.8s ease 0.1s both;
 }
 
 .hero-copy h1 {
     font-size: clamp(3rem, 5vw, 4.5rem);
     line-height: 1.05;
     margin-bottom: 24px;
+    animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .hero-description {
@@ -130,6 +208,7 @@ nav ul li a.active {
     font-size: 1rem;
     margin-bottom: 32px;
     color: #2f2f2f;
+    animation: fadeInUp 0.8s ease 0.3s both;
 }
 
 .cta-btn {
@@ -141,11 +220,29 @@ nav ul li a.active {
     text-decoration: none;
     font-weight: bold;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease 0.4s both;
+    position: relative;
+    overflow: hidden;
 }
 
 .cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 30px rgba(139,69,69,0.18);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 30px rgba(139,69,69,0.3);
+}
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: left 0.4s ease;
+}
+
+.cta-btn:hover::before {
+    left: 100%;
 }
 
 .hero-visual {
@@ -160,6 +257,7 @@ nav ul li a.active {
     background: url("resources/home.jpg") center/cover no-repeat;
     box-shadow: 0 25px 60px rgba(0,0,0,0.25);
     border: 14px solid rgba(255,255,255,0.9);
+    animation: slideInRight 0.8s ease 0.2s both, float 3s ease-in-out infinite;
 }
 
 .about-section {
@@ -181,12 +279,18 @@ nav ul li a.active {
     box-shadow: 0 24px 48px rgba(0,0,0,0.14);
     border: 12px solid rgba(255,255,255,0.92);
     margin: 0 auto;
+    transition: transform 0.4s ease;
+}
+
+.about-photo:hover {
+    transform: scale(1.05);
 }
 
 .about-copy h2,
 .section-heading h2 {
     font-size: clamp(2rem, 3vw, 3rem);
     margin-bottom: 18px;
+    animation: fadeInUp 0.8s ease both;
 }
 
 .about-copy p {
@@ -194,6 +298,7 @@ nav ul li a.active {
     line-height: 1.9;
     margin-bottom: 18px;
     max-width: 640px;
+    animation: fadeInUp 0.8s ease 0.1s both;
 }
 
 .projects-section, .skills-section{
@@ -206,6 +311,7 @@ nav ul li a.active {
 .section-heading {
     text-align: center;
     margin-bottom: 40px;
+    animation: fadeInUp 0.8s ease both;
 }
 
 .section-heading p {
@@ -213,6 +319,7 @@ nav ul li a.active {
     margin: 0 auto;
     color: #4b4b4b;
     line-height: 1.75;
+    animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .project-panel {
@@ -222,6 +329,13 @@ nav ul li a.active {
     padding: 32px;
     margin-bottom: 32px;
     box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeInUp 0.8s ease both;
+}
+
+.project-panel:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 60px rgba(0,0,0,0.15);
 }
 
 .project-heading {
@@ -235,11 +349,13 @@ nav ul li a.active {
 
 .project-heading h3 {
     font-size: 1.7rem;
+    animation: slideInLeft 0.6s ease;
 }
 
 .project-role {
     color: #4b4b4b;
     font-size: 0.95rem;
+    animation: slideInRight 0.6s ease;
 }
 
 .project-role span {
@@ -260,6 +376,11 @@ nav ul li a.active {
     overflow: hidden;
     background: #fff;
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.8);
+    transition: transform 0.4s ease;
+}
+
+.project-frame:hover {
+    transform: scale(1.02);
 }
 
 .project-frame img {
@@ -280,11 +401,39 @@ nav ul li a.active {
     padding: 14px;
     text-align: center;
     box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: scaleIn 0.6s ease both;
+}
+
+.gallery-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.gallery-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.gallery-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.gallery-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.gallery-card:nth-child(4) {
+    animation-delay: 0.3s;
 }
 
 .gallery-card img {
     border-radius: 16px;
     margin-bottom: 14px;
+    transition: transform 0.4s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
 }
 
 .gallery-card p {
@@ -298,6 +447,13 @@ nav ul li a.active {
     border-radius: 28px;
     padding: 42px 40px;
     box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    animation: fadeInUp 0.8s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.skills-panel:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.12);
 }
 
 .skills-list {
@@ -312,6 +468,24 @@ nav ul li a.active {
     padding-left: 26px;
     color: #262626;
     font-size: 1.05rem;
+    animation: slideInLeft 0.6s ease both;
+    transition: transform 0.3s ease;
+}
+
+.skills-list li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.skills-list li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.skills-list li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.skills-list li:hover {
+    transform: translateX(10px);
 }
 
 .skills-list li::before {
@@ -342,10 +516,26 @@ nav ul li a.active {
     box-shadow: 0 18px 40px rgba(0,0,0,0.08);
     width: 100%;
     max-width: 100%;
+    animation: fadeInUp 0.8s ease both;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.15);
+}
+
+.contact-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.contact-card:nth-child(2) {
+    animation-delay: 0.2s;
 }
 
 .contact-card h2 {
     margin-bottom: 28px;
+    animation: slideInLeft 0.6s ease;
 }
 
 .contact-list {
@@ -359,12 +549,35 @@ nav ul li a.active {
     gap: 16px;
     align-items: center;
     color: #2d2d2d;
+    animation: slideInLeft 0.6s ease both;
+    transition: transform 0.3s ease;
+}
+
+.contact-list li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.contact-list li:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.contact-list li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.contact-list li:nth-child(4) {
+    animation-delay: 0.35s;
+}
+
+.contact-list li:hover {
+    transform: translateX(8px);
 }
 
 .contact-list i {
     font-size: 1.3rem;
     width: 34px;
     text-align: center;
+    transition: color 0.3s ease;
 }
 
 .contact-list a {
@@ -385,6 +598,15 @@ nav ul li a.active {
 .contact-form-card label {
     font-weight: bold;
     color: #373737;
+    animation: slideInLeft 0.6s ease both;
+}
+
+.contact-form-card label:nth-of-type(1) {
+    animation-delay: 0.2s;
+}
+
+.contact-form-card label:nth-of-type(2) {
+    animation-delay: 0.25s;
 }
 
 .contact-form-card input,
@@ -396,6 +618,25 @@ nav ul li a.active {
     font-family: var(--font-main);
     background: #f9f9f9;
     color: #111;
+    animation: slideInLeft 0.6s ease both;
+    transition: all 0.3s ease;
+}
+
+.contact-form-card input:nth-of-type(1),
+.contact-form-card textarea:nth-of-type(1) {
+    animation-delay: 0.22s;
+}
+
+.contact-form-card textarea {
+    animation-delay: 0.27s;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 0 3px rgba(139,69,69,0.1);
+    background: #fff;
 }
 
 .submit-btn {
@@ -410,11 +651,53 @@ nav ul li a.active {
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: slideInLeft 0.6s ease 0.32s both;
+    position: relative;
+    overflow: hidden;
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 30px rgba(139,69,69,0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 30px rgba(139,69,69,0.3);
+}
+
+.submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.submit-btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Animation utility classes */
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease both;
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.8s ease both;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.6s ease both;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.6s ease both;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease both;
 }
 
 @media (max-width: 1024px) {
