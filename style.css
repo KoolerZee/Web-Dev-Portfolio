@@ -771,7 +771,7 @@ nav ul li a.active {
     }
 
     .contact-grid {
-        gap: 20px;
+        padding: 0 16px;  /* Reduce padding for small screens */
     }
 
     .contact-card {

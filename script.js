@@ -49,7 +49,7 @@
         scrollAnimationObserver.observe(el);
     });
 
-    // Add smooth hover effects to links
+    // Smooth hover effects to links
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('mouseenter', function() {
             if (this.classList.contains('cta-btn')) {
