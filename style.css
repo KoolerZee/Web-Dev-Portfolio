@@ -362,11 +362,12 @@ nav ul li a:focus {
 }
 
 .contact-list a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 .contact-list a:hover {
+  text-decoration: none;
   color: var(--highlight-color);
 }
 
