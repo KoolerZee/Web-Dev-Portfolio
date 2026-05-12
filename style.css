@@ -771,7 +771,7 @@ nav ul li a.active {
     }
 
     .contact-grid {
-        padding: 0 16px;  /* Reduce padding for small screens */
+        padding: 0 16px;
     }
 
     .contact-card {
@@ -780,6 +780,43 @@ nav ul li a.active {
 
     .contact-form-card input,
     .contact-form-card textarea {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .contact-grid {
+        padding: 0 8px;
+    }
+
+    .contact-card {
+        padding: 16px;
+    }
+
+    .contact-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .contact-list li {
+        gap: 12px;
+    }
+
+    .contact-list i {
+        font-size: 1.1rem;
+    }
+
+    .contact-form-card label {
+        font-size: 0.9rem;
+    }
+
+    .contact-form-card input,
+    .contact-form-card textarea {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        padding: 12px 24px;
         font-size: 0.95rem;
     }
 }
